@@ -67,11 +67,7 @@ RSpec.describe MerchantRepository do
       mock_sales_engine = instance_double('SalesEngine')
       mr = MerchantRepository.new('./data/merchants_truncated.csv', mock_sales_engine)
 
-      mr.create({
-                  name: 'JimmysSubs',
-                  created_at: Time.now.to_s,
-                  updated_at: Time.now.to_s
-                })
+      mr.create({name: 'JimmysSubs'})
 
       expect(mr.find_by_id(12334114)).to eq(mr.merchants[4])
     end

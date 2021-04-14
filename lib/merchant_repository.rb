@@ -47,6 +47,9 @@ class MerchantRepository
       merchant.id
     end
     attributes[:id] = max_id.id + 1
+    attributes[:created_at] = Time.now.to_s
+    attributes[:updated_at] = Time.now.to_s
+    # require 'pry'; binding.pry
     @merchants << Merchant.new(attributes, self)
   end
 
